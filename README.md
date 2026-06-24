@@ -1,6 +1,6 @@
 # Analyzing the MID task
 
-The following is a python based pipeline used to analyze the MID task collected as part of Stanford's NEST-M study. This package is free to use but keep in mind that it was built specifically for our dataset. As such, it may require significant editing in order to make it work properly on your data. In particular, be sure to check things like directory paths, file names, preprocessing parameters (i.e. high-pass filter cutoff, gaussian smoothing kernel size, TR, and events file design) before running. 
+The following is a python based pipeline used to analyze the MID task collected as part of Stanford's NEST-M study. This package is free to use but keep in mind that it was built specifically for our dataset. As such, it may require significant editing in order to make it work properly on your data. In particular, be sure to check things like directory paths, file names, processing parameters (i.e. high-pass filter cutoff, gaussian smoothing kernel size, TR, and events file design) before running. 
 
 ## Before Analysis (structuring data, file naming, installing depedencies)
 1. Download and install [fMRIPrep](https://github.com/nipreps/fmriprep) (I recommend using their [docker container](https://fmriprep.org/en/20.2.0/docker.html))
