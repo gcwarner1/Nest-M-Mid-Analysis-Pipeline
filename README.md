@@ -13,5 +13,5 @@ The following is a python based pipeline used to analyze the MID task collected 
 ## Running the pipeline
 1. Preprocess data using `fmriPrep_preprocess.sh`
 2. QC fmriPrep results
-3. Analyze MID task by running `mid_analysis.py`
+3. Analyze MID task by running `mid_analysis.py` (edit `SESS`, `AINS_LABELS`, paths, etc in script before running)
 4. QC analysis results in the `Outputs` directory
