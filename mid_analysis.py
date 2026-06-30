@@ -119,6 +119,10 @@ CUE_DURATION = 4.0   # seconds
 # cue_value strings in the CSV are +$5, -$5, +$1, -$1, +$0, -$0 — all distinct.
 CONDITIONS = ["gain5", "loss5", "gain1", "loss1", "gain0", "loss0"]
 
+# Display order for figure x-axes — matches MacNiven et al. (2024) Fig 4d:
+#   -$5, -$1, -$0, +$0, +$1, +$5  (losses left → gains right)
+PLOT_ORDER = ["loss5", "loss1", "loss0", "gain0", "gain1", "gain5"]
+
 # Human-readable labels for plots (same order as CONDITIONS)
 CONDITION_LABELS = {
     "gain5": "+$5",
@@ -954,10 +958,10 @@ def make_figures(df_merged: pd.DataFrame, out_root: Path) -> None:
 
     fig4d, ax4d = plt.subplots(figsize=(7, 5))
 
-    x      = np.arange(len(CONDITIONS))
+    x      = np.arange(len(PLOT_ORDER))
     bar_w  = 0.6
 
-    for xi, cond in enumerate(CONDITIONS):
+    for xi, cond in enumerate(PLOT_ORDER):
         row = df_coef[df_coef["condition"] == cond].iloc[0]
         if np.isnan(row["slope"]):
             continue
@@ -980,7 +984,7 @@ def make_figures(df_merged: pd.DataFrame, out_root: Path) -> None:
     ax4d.axhline(0, color="black", linewidth=0.8, zorder=2)
     ax4d.set_xticks(x)
     ax4d.set_xticklabels(
-        [CONDITION_LABELS[c] for c in CONDITIONS],
+        [CONDITION_LABELS[c] for c in PLOT_ORDER],
         fontsize=11,
     )
     ax4d.set_xlabel("Trial Type", fontsize=11)
