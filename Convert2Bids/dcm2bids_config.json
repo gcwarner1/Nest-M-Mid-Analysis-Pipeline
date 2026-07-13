@@ -1,0 +1,89 @@
+{
+  "search_method": "re",
+  "descriptions": [
+    {
+      "id": "T1w",
+      "datatype": "anat",
+      "suffix": "T1w",
+      "criteria": {
+        "SeriesDescription": "^T1w 1mm$"
+      }
+    },
+    {
+      "id": "T2w",
+      "datatype": "anat",
+      "suffix": "T2w",
+      "criteria": {
+        "SeriesDescription": "^T2w CUBE \\.8mm sag$"
+      }
+    },
+    {
+      "id": "dwi",
+      "datatype": "dwi",
+      "suffix": "dwi",
+      "criteria": {
+        "SeriesDescription": "^DTI 2mm b1250 84dir\\(axial\\)$"
+      }
+    },
+    {
+      "id": "task-con",
+      "datatype": "func",
+      "suffix": "bold",
+      "custom_entities": "task-con",
+      "criteria": {
+        "SeriesDescription": "^conscious 2$"
+      },
+      "sidecar_changes": {
+        "TaskName": "con"
+      }
+    },
+    {
+      "id": "task-noncon",
+      "datatype": "func",
+      "suffix": "bold",
+      "custom_entities": "task-noncon",
+      "criteria": {
+        "SeriesDescription": "^nonconscious 2$"
+      },
+      "sidecar_changes": {
+        "TaskName": "noncon"
+      }
+    },
+    {
+      "id": "task-cue",
+      "datatype": "func",
+      "suffix": "bold",
+      "custom_entities": "task-cue",
+      "criteria": {
+        "SeriesDescription": "^Cue_Reactivity$"
+      },
+      "sidecar_changes": {
+        "TaskName": "cue"
+      }
+    },
+    {
+      "id": "task-mid-1",
+      "datatype": "func",
+      "suffix": "bold",
+      "custom_entities": "task-mid_run-1",
+      "criteria": {
+        "SeriesDescription": "^MID_run1_BOLD$"
+      },
+      "sidecar_changes": {
+        "TaskName": "mid"
+      }
+    },
+    {
+      "id": "task-mid-2",
+      "datatype": "func",
+      "suffix": "bold",
+      "custom_entities": "task-mid_run-2",
+      "criteria": {
+        "SeriesDescription": "^MID_run2_BOLD$"
+      },
+      "sidecar_changes": {
+        "TaskName": "mid"
+      }
+    }
+  ]
+}
